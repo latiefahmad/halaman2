@@ -21,7 +21,6 @@ body::before {
   position: fixed;
   background: #040404 url("../img/DSC_2710.JPG");
   background-attachment: fixed;
-  background-repeat: no-repeat;
   background-size: cover;
   left: 0;
   right: 0;
