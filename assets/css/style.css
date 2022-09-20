@@ -18,9 +18,9 @@ body {
 
 body::before {
   content: "";
-  /*position: fixed;*/
+  position: center center;
   background: #040404 url("../img/DSC_2710.JPG");
-  background-attachment: fixed;
+  background-attachment: auto;
   background-position: center center;
   background-size: cover;
   left: 0;
