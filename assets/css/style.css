@@ -20,7 +20,6 @@ body::before {
   content: "";
   position: fixed;
   background: #040404 url("../img/lololo.jpeg");
-  background-attachment: auto;
   background-position: center center;
   background-size: cover;
   left: 0;
