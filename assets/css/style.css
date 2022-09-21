@@ -22,6 +22,7 @@ body::before {
   background: #040404 url("../img/lololo.jpeg");
   background-position: center center;
   background-size: auto;
+  background-repeat: no-repeat;
   left: 0;
   right: 0;
   top: 0;
