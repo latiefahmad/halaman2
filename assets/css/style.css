@@ -34,6 +34,7 @@ body::before {
   body::before {
     background-attachment: fixed;
     background-position: center center;
+    background-size: cover;
   }
 }
 
