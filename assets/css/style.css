@@ -22,7 +22,7 @@ body::before {
   background: #040404 url("../img/lololo.jpeg");
   background-attachment: auto;
   background-position: center center;
-  background-size: cover;
+  /*background-size: cover;*/
   left: 0;
   right: 0;
   top: 0;
@@ -34,7 +34,6 @@ body::before {
   body::before {
     background-attachment: fixed;
     background-position: center center;
-    background-size: cover;
   }
 }
 
