@@ -19,7 +19,7 @@ body {
 body::before {
   content: "";
   position: fixed;
-  background: #040404 url("../img/lololo.jpeg");
+  background: #040404 url("../img/bg2.jpg");
   background-position: center center;
   background-size: 100%;
   background-repeat: no-repeat;
