@@ -291,6 +291,55 @@
 
   </section><!-- End About Section -->
 
+<!-- ======= Live Code Editor Section ======= -->
+  <section id="lce" class="lce">
+    <div class="container">
+      <div class="section-title">
+        <h2>Live</h2>
+        <p>Code Editor</p>
+      </div>
+
+      <div class="lce-toolbar d-flex align-items-center justify-content-between mb-3">
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="lce-autorun" checked>
+          <label class="form-check-label" for="lce-autorun">Auto-run</label>
+        </div>
+        <div class="btn-group">
+          <button id="lce-run" type="button" class="btn btn-success">
+            <i class="bi bi-play-fill"></i> Run
+          </button>
+          <button id="lce-reset" type="button" class="btn btn-outline-light">
+            <i class="bi bi-arrow-counterclockwise"></i> Reset
+          </button>
+        </div>
+      </div>
+
+      <div class="row g-3">
+        <div class="col-lg-6">
+          <div class="editor">
+            <label for="lce-html" class="editor-label">HTML</label>
+            <textarea id="lce-html" spellcheck="false"></textarea>
+          </div>
+          <div class="editor">
+            <label for="lce-css" class="editor-label">CSS</label>
+            <textarea id="lce-css" spellcheck="false"></textarea>
+          </div>
+          <div class="editor">
+            <label for="lce-js" class="editor-label">JavaScript</label>
+            <textarea id="lce-js" spellcheck="false"></textarea>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="preview">
+            <label for="lce-preview" class="editor-label">Preview</label>
+            <iframe id="lce-preview" title="Live preview" sandbox="allow-scripts allow-same-origin"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Live Code Editor Section -->
   <!-- ======= Contact Section ======= -->
   <section id="contact" class="contact">
     <div class="container">
@@ -330,7 +379,7 @@
     <!-- Licensing information: https://bootstrapmade.com/license/ -->
     <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/personal-free-resume-bootstrap-template/ -->
     Designed with <a href="https://t.me/latiefahmad">💖</a><br>
-    <a href='https://ko-fi.com/E1E1FO11L' target='_blank'><img height='36' style='border:0px;height:36px;'
+    <a href='https://ko-fi.com/E1E1FO11L' target='_blank' class='kofi-float'><img height='36' style='border:0px;height:36px;'
         src='https://cdn.ko-fi.com/cdn/kofi2.png?v=3' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
   </div>
 
@@ -348,6 +397,21 @@
   <script src="index.js"></script>
 
 
+<script>
+// Ensure home (header) cannot scroll on desktop/mobile
+(function () {
+  function setHomeNoScroll(on) {
+    document.documentElement.classList.toggle('home-no-scroll', on);
+    document.body.classList.toggle('home-no-scroll', on);
+  }
+  function updateHomeScrollState() {
+    var hash = window.location.hash || '#header';
+    setHomeNoScroll(hash === '#header' || hash === '');
+  }
+  window.addEventListener('load', updateHomeScrollState);
+  window.addEventListener('hashchange', updateHomeScrollState);
+})();
+</script>
 </body>
 
 </html>

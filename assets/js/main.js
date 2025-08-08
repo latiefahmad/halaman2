@@ -45,6 +45,14 @@
   }
 
   /**
+   * Toggle no scroll state for home
+   */
+  const setHomeNoScroll = (isHome) => {
+    document.documentElement.classList.toggle('home-no-scroll', isHome)
+    document.body.classList.toggle('home-no-scroll', isHome)
+  }
+
+  /**
    * Mobile nav toggle
    */
   on('click', '.mobile-nav-toggle', function(e) {
@@ -84,6 +92,7 @@
         sections.forEach((item) => {
           item.classList.remove('section-show')
         })
+        setHomeNoScroll(true)
         return;
       }
 
@@ -94,13 +103,14 @@
             item.classList.remove('section-show')
           })
           section.classList.add('section-show')
-
+          setHomeNoScroll(false)
         }, 350);
       } else {
         sections.forEach((item) => {
           item.classList.remove('section-show')
         })
         section.classList.add('section-show')
+        setHomeNoScroll(false)
       }
 
       scrollto(this.hash)
@@ -130,10 +140,13 @@
 
         setTimeout(function() {
           initial_nav.classList.add('section-show')
+          setHomeNoScroll(false)
         }, 350);
 
         scrollto(window.location.hash)
       }
+    } else {
+      setHomeNoScroll(true)
     }
   });
 

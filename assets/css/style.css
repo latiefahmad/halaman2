@@ -9,11 +9,14 @@
 # General
 --------------------------------------------------------------*/
 body {
+
   font-family: "Open Sans", sans-serif;
   background-color: #040404;
   color: #fff;
   position: relative;
   background: transparent;
+
+  padding-bottom: 70px;
 }
 
 body::before {
@@ -930,7 +933,7 @@ section .container {
 --------------------------------------------------------------*/
 .portfolio-details {
   padding-top: 40px;
-  background: rgba(0, 0, 0, 0.8);
+  background: transparent;
   position: fixed;
   left: 0;
   right: 0;
@@ -1174,7 +1177,7 @@ section .container {
   left: 0;
   bottom: 0;
   padding: 15px;
-  text-align: right;
+  text-align: center;
   font-size: 13px;
   color: #fff;
   z-index: 999999;
@@ -1184,7 +1187,7 @@ section .container {
   .credits {
     text-align: center;
     padding: 10px;
-    background: rgba(0, 0, 0, 0.8);
+    background: transparent;
   }
 }
 
@@ -1195,4 +1198,104 @@ section .container {
 
 .credits a:hover {
   color: #fff;
+}
+
+/*--------------------------------------------------------------
+# Live Code Editor (LCE)
+--------------------------------------------------------------*/
+.lce .lce-toolbar {
+  margin-bottom: 12px;
+}
+
+.lce .editor {
+  margin-bottom: 12px;
+}
+
+.lce .editor-label {
+  display: block;
+  font-size: 12px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 6px;
+}
+
+.lce textarea {
+  width: 100%;
+  min-height: 120px;
+  resize: vertical;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 6px;
+  color: #fff;
+  padding: 10px 12px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.lce textarea:focus {
+  outline: none;
+  border-color: #18d26e;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.lce .preview iframe {
+  width: 100%;
+  min-height: 420px;
+  background: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 6px;
+}
+
+.lce .lce-toolbar .btn {
+  padding: 6px 12px;
+}
+
+@media (max-width: 991px) {
+  .lce .preview iframe {
+    min-height: 360px;
+  }
+}
+
+/*--------------------------------------------------------------
+# Ko-fi Floating Button
+--------------------------------------------------------------*/
+.kofi-float {
+  position: fixed;
+  right: 16px;
+  bottom: 80px;
+  z-index: 1000001; /* Above .credits (999999) */
+  display: inline-block;
+  transition: transform .2s ease;
+}
+
+.kofi-float:hover {
+  transform: translateY(-2px);
+}
+
+.kofi-float img {
+  display: block;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .35);
+  border-radius: 6px;
+}
+
+/*--------------------------------------------------------------
+# Home (Header) No-Scroll
+--------------------------------------------------------------*/
+#header {
+  overflow-y: hidden; /* prevent internal scroll in home header */
+}
+
+/* When on Home, disable page scroll entirely */
+html.home-no-scroll,
+body.home-no-scroll {
+  overflow: hidden;
+  height: 100%;
+  overscroll-behavior: none;
+}
+
+/* Remove extra bottom padding on home so no accidental scroll */
+body.home-no-scroll {
+  padding-bottom: 0 !important;
 }
